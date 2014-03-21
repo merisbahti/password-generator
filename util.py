@@ -10,6 +10,14 @@ def rand(highest):
     return int(random.random()*(highest+1))
 
 # Open path and return every line in a list
-def load(path):
+def load(path, minln, maxln):
     f = open(path)
-    return [x for x in f.readlines() if x.isalpha and len(x)>3 and len(x)<8]
+    return [x for x in f.readlines() if x.isalpha and len(x)>minln and len(x)<maxln]
+
+# Prompt int error if not.
+def promptint(message):
+    return int(input(message))
+
+# Prompt str error if not.
+def promptstr(message):
+    return str(input(message))

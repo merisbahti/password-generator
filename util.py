@@ -11,8 +11,9 @@ def rand(highest):
 
 # Open path and return every line in a list
 def load(path, minln, maxln):
-    f = open(path)
-    return [x for x in f.readlines() if x.isalpha and len(x)>minln and len(x)<maxln]
+    with open(path) as f:
+        val = [x for x in f.readlines() if x.isalpha and len(x)>minln and len(x)<maxln]
+    return val
 
 # Prompt int error if not.
 def promptint(message):

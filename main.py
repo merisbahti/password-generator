@@ -4,11 +4,11 @@ print("XKCD Password Generator.")
 dicts = ls("/usr/share/dict")
 
 print("{:d} files found in /usr/share/dict".format(len(dicts)))
-print("Choose which one to use 0-{:d}".format(len(dicts)))
+print("Choose which one to use 0-{:d}".format(len(dicts)-1))
 for i in range(len(dicts)):
     print(str(i) + ": "+dicts[i].split("/")[-1])
 
-d  = load("/usr/share/dict/"+dicts[promptint("Choice (0-{:d}): ".format(len(dicts)))], 
+d  = load("/usr/share/dict/"+dicts[promptint("Choice (0-{:d}): ".format(len(dicts)-1))], 
         promptint("Minimum word length: "), 
         promptint("Maximum word length: "))
 
